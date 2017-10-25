@@ -1,0 +1,681 @@
+
+ALBACORE_OUT_PATH='/home/yiheng/test/basecalled_data' # make sure the input file is only a copy
++ ALBACORE_OUT_PATH=/home/yiheng/test/basecalled_data
+WORKDIR='/home/yiheng/test/workspace'
++ WORKDIR=/home/yiheng/test/workspace
+NAME='Hu_FAH05731_albacore202'
++ NAME=Hu_FAH05731_albacore202
+DATE='20171025'
++ DATE=20171025
+BARCODE='barcode09'
++ BARCODE=barcode09
+
+cd ${ALBACORE_OUT_PATH}
++ cd /home/yiheng/test/basecalled_data
+tar -xvf ${NAME}.tar.gz
++ tar -xvf Hu_FAH05731_albacore202.tar.gz
+Hu_FAH05731_albacore202/
+Hu_FAH05731_albacore202/configuration.cfg
+Hu_FAH05731_albacore202/sequencing_summary.txt
+Hu_FAH05731_albacore202/workspace/
+Hu_FAH05731_albacore202/workspace/fail/
+Hu_FAH05731_albacore202/workspace/fail/barcode01/
+Hu_FAH05731_albacore202/workspace/fail/barcode01/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode01/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode06/
+Hu_FAH05731_albacore202/workspace/fail/barcode06/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode06/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode04/
+Hu_FAH05731_albacore202/workspace/fail/barcode04/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode04/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode05/
+Hu_FAH05731_albacore202/workspace/fail/barcode05/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode05/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode02/
+Hu_FAH05731_albacore202/workspace/fail/barcode02/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode02/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode02/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode03/
+Hu_FAH05731_albacore202/workspace/fail/barcode03/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode03/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/barcode07/
+Hu_FAH05731_albacore202/workspace/fail/barcode07/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/unclassified/
+Hu_FAH05731_albacore202/workspace/fail/unclassified/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/unclassified/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/unclassified/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/unclassified/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/unclassified/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/fail/unclassified/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/
+Hu_FAH05731_albacore202/workspace/pass/barcode27/
+Hu_FAH05731_albacore202/workspace/pass/barcode27/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode27/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode14/
+Hu_FAH05731_albacore202/workspace/pass/barcode14/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode55/
+Hu_FAH05731_albacore202/workspace/pass/barcode55/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode55/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode55/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode68/
+Hu_FAH05731_albacore202/workspace/pass/barcode68/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode71/
+Hu_FAH05731_albacore202/workspace/pass/barcode71/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode75/
+Hu_FAH05731_albacore202/workspace/pass/barcode75/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode75/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode75/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode75/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode38/
+Hu_FAH05731_albacore202/workspace/pass/barcode38/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode38/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode21/
+Hu_FAH05731_albacore202/workspace/pass/barcode21/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode21/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode21/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode21/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode56/
+Hu_FAH05731_albacore202/workspace/pass/barcode56/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode56/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode56/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode84/
+Hu_FAH05731_albacore202/workspace/pass/barcode84/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode84/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode40/
+Hu_FAH05731_albacore202/workspace/pass/barcode40/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode40/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode40/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode30/
+Hu_FAH05731_albacore202/workspace/pass/barcode30/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode30/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode01/
+Hu_FAH05731_albacore202/workspace/pass/barcode01/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode01/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode01/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode01/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode01/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode01/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode26/
+Hu_FAH05731_albacore202/workspace/pass/barcode26/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode26/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode81/
+Hu_FAH05731_albacore202/workspace/pass/barcode81/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode81/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode82/
+Hu_FAH05731_albacore202/workspace/pass/barcode82/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode82/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode63/
+Hu_FAH05731_albacore202/workspace/pass/barcode63/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode63/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode63/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode63/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode73/
+Hu_FAH05731_albacore202/workspace/pass/barcode73/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode73/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode31/
+Hu_FAH05731_albacore202/workspace/pass/barcode31/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode31/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode91/
+Hu_FAH05731_albacore202/workspace/pass/barcode91/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode91/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode60/
+Hu_FAH05731_albacore202/workspace/pass/barcode60/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode60/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode88/
+Hu_FAH05731_albacore202/workspace/pass/barcode88/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode88/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode88/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode93/
+Hu_FAH05731_albacore202/workspace/pass/barcode93/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode50/
+Hu_FAH05731_albacore202/workspace/pass/barcode50/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode50/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode50/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode80/
+Hu_FAH05731_albacore202/workspace/pass/barcode80/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode80/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode23/
+Hu_FAH05731_albacore202/workspace/pass/barcode23/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode23/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode23/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode76/
+Hu_FAH05731_albacore202/workspace/pass/barcode76/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode76/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode64/
+Hu_FAH05731_albacore202/workspace/pass/barcode64/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode64/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode20/
+Hu_FAH05731_albacore202/workspace/pass/barcode20/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode20/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode20/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode20/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode20/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode17/
+Hu_FAH05731_albacore202/workspace/pass/barcode17/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode15/
+Hu_FAH05731_albacore202/workspace/pass/barcode15/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode15/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode12/
+Hu_FAH05731_albacore202/workspace/pass/barcode12/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode12/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode12/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode67/
+Hu_FAH05731_albacore202/workspace/pass/barcode67/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode67/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode86/
+Hu_FAH05731_albacore202/workspace/pass/barcode86/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode86/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode79/
+Hu_FAH05731_albacore202/workspace/pass/barcode79/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode79/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode79/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode79/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode32/
+Hu_FAH05731_albacore202/workspace/pass/barcode32/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode32/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode46/
+Hu_FAH05731_albacore202/workspace/pass/barcode46/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode46/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode49/
+Hu_FAH05731_albacore202/workspace/pass/barcode49/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode49/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode54/
+Hu_FAH05731_albacore202/workspace/pass/barcode54/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode54/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode37/
+Hu_FAH05731_albacore202/workspace/pass/barcode37/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode37/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode37/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode37/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode37/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode37/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode06/
+Hu_FAH05731_albacore202/workspace/pass/barcode06/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode06/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode06/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode06/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode06/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode06/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode59/
+Hu_FAH05731_albacore202/workspace/pass/barcode59/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode22/
+Hu_FAH05731_albacore202/workspace/pass/barcode22/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode28/
+Hu_FAH05731_albacore202/workspace/pass/barcode28/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode28/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode47/
+Hu_FAH05731_albacore202/workspace/pass/barcode47/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode47/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode47/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode96/
+Hu_FAH05731_albacore202/workspace/pass/barcode96/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode96/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode96/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode90/
+Hu_FAH05731_albacore202/workspace/pass/barcode90/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode90/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode90/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode36/
+Hu_FAH05731_albacore202/workspace/pass/barcode36/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode36/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode04/
+Hu_FAH05731_albacore202/workspace/pass/barcode04/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode04/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode04/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode04/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode04/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode04/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode77/
+Hu_FAH05731_albacore202/workspace/pass/barcode77/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode77/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode77/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode77/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode09/
+Hu_FAH05731_albacore202/workspace/pass/barcode09/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode43/
+Hu_FAH05731_albacore202/workspace/pass/barcode43/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode43/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode43/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode05/
+Hu_FAH05731_albacore202/workspace/pass/barcode05/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode05/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode05/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode05/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode05/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode05/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode29/
+Hu_FAH05731_albacore202/workspace/pass/barcode29/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode95/
+Hu_FAH05731_albacore202/workspace/pass/barcode95/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode95/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode95/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode62/
+Hu_FAH05731_albacore202/workspace/pass/barcode62/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode66/
+Hu_FAH05731_albacore202/workspace/pass/barcode66/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode66/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode35/
+Hu_FAH05731_albacore202/workspace/pass/barcode35/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode35/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode45/
+Hu_FAH05731_albacore202/workspace/pass/barcode45/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode45/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode45/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode45/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode74/
+Hu_FAH05731_albacore202/workspace/pass/barcode74/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode89/
+Hu_FAH05731_albacore202/workspace/pass/barcode89/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode89/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode89/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode72/
+Hu_FAH05731_albacore202/workspace/pass/barcode72/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode72/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode19/
+Hu_FAH05731_albacore202/workspace/pass/barcode19/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode19/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode19/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode19/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode58/
+Hu_FAH05731_albacore202/workspace/pass/barcode58/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode58/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode42/
+Hu_FAH05731_albacore202/workspace/pass/barcode42/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode42/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode83/
+Hu_FAH05731_albacore202/workspace/pass/barcode83/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode83/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode33/
+Hu_FAH05731_albacore202/workspace/pass/barcode33/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode33/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode33/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode65/
+Hu_FAH05731_albacore202/workspace/pass/barcode65/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode65/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode48/
+Hu_FAH05731_albacore202/workspace/pass/barcode48/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode48/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode48/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode02/
+Hu_FAH05731_albacore202/workspace/pass/barcode02/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode02/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode02/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode02/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode02/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode02/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode41/
+Hu_FAH05731_albacore202/workspace/pass/barcode41/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode41/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode03/
+Hu_FAH05731_albacore202/workspace/pass/barcode03/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode03/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode03/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode03/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode03/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode03/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode07/
+Hu_FAH05731_albacore202/workspace/pass/barcode07/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode07/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode07/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode07/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode07/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode07/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode85/
+Hu_FAH05731_albacore202/workspace/pass/barcode85/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode85/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode85/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode85/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode16/
+Hu_FAH05731_albacore202/workspace/pass/barcode16/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode16/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode92/
+Hu_FAH05731_albacore202/workspace/pass/barcode92/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode92/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode69/
+Hu_FAH05731_albacore202/workspace/pass/barcode69/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode69/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode69/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode10/
+Hu_FAH05731_albacore202/workspace/pass/barcode10/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode10/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode08/
+Hu_FAH05731_albacore202/workspace/pass/barcode08/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode25/
+Hu_FAH05731_albacore202/workspace/pass/barcode25/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode25/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode53/
+Hu_FAH05731_albacore202/workspace/pass/barcode53/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode53/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode11/
+Hu_FAH05731_albacore202/workspace/pass/barcode11/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode11/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode11/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode70/
+Hu_FAH05731_albacore202/workspace/pass/barcode70/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode70/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode61/
+Hu_FAH05731_albacore202/workspace/pass/barcode61/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode61/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode61/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode61/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode24/
+Hu_FAH05731_albacore202/workspace/pass/barcode24/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode24/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode57/
+Hu_FAH05731_albacore202/workspace/pass/barcode57/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode57/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/unclassified/
+Hu_FAH05731_albacore202/workspace/pass/unclassified/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/unclassified/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/unclassified/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/unclassified/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/unclassified/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/unclassified/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode51/
+Hu_FAH05731_albacore202/workspace/pass/barcode51/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode51/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode51/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode39/
+Hu_FAH05731_albacore202/workspace/pass/barcode39/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode39/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode87/
+Hu_FAH05731_albacore202/workspace/pass/barcode87/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode87/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode94/
+Hu_FAH05731_albacore202/workspace/pass/barcode94/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode94/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode94/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode13/
+Hu_FAH05731_albacore202/workspace/pass/barcode13/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode13/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode13/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode52/
+Hu_FAH05731_albacore202/workspace/pass/barcode52/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode52/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode52/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq
+Hu_FAH05731_albacore202/workspace/pass/barcode52/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq
+Hu_FAH05731_albacore202/pipeline.log
+cd ${NAME}/workspace/pass
++ cd Hu_FAH05731_albacore202/workspace/pass
+
+### filter CDS | fastq to fasta
+
+cat ${BARCODE}/*.fastq > ${NAME}.${BARCODE}.unlysed.fastq 
++ cat barcode09/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq
+gzip ${NAME}.${BARCODE}.unlysed.fastq
++ gzip Hu_FAH05731_albacore202.barcode09.unlysed.fastq
+gunzip -c ${NAME}.${BARCODE}.unlysed.fastq.gz | NanoLyse | gzip > ${NAME}.${BARCODE}.fastq.gz
++ gzip
++ NanoLyse
++ gunzip -c Hu_FAH05731_albacore202.barcode09.unlysed.fastq.gz
+gunzip ${NAME}.${BARCODE}.fastq.gz
++ gunzip Hu_FAH05731_albacore202.barcode09.fastq.gz
+
+### move to the workspace folder for further manipulation
+mkdir -p ${WORKDIR}
++ mkdir -p /home/yiheng/test/workspace
+mv ${ALBACORE_OUT_PATH}/${NAME}/workspace/pass/${NAME}.${BARCODE}.fastq ${WORKDIR}
++ mv /home/yiheng/test/basecalled_data/Hu_FAH05731_albacore202/workspace/pass/Hu_FAH05731_albacore202.barcode09.fastq /home/yiheng/test/workspace
+cd ${WORKDIR}
++ cd /home/yiheng/test/workspace
+
+# do porechop to chop out adapter sequence
+
+porechop -i ${WORKDIR}/${NAME}.${BARCODE}.fastq -o ${WORKDIR}/${NAME}.chopped.${BARCODE}.fastq --format fastq --middle_threshold 95
++ porechop -i /home/yiheng/test/workspace/Hu_FAH05731_albacore202.barcode09.fastq -o /home/yiheng/test/workspace/Hu_FAH05731_albacore202.chopped.barcode09.fastq --format fastq --middle_threshold 95
+
+[1m[4mLoading reads[0m
+/home/yiheng/test/workspace/Hu_FAH05731_albacore202.barcode09.fastq
+5 reads loaded
+
+
+[1m[4mLooking for known adapter sets[0m
+0 / 5 (0.0%)5 / 5 (100.0%)5 / 5 (100.0%)
+                                        Best               [0m
+                                        read       Best    [0m
+                                        start      read end[0m
+  [4mSet                                   %ID        %ID     [0m
+  SQK-NSK007                                86.2       72.7
+  Rapid                                     62.1        0.0
+  [32mSQK-MAP006                                76.7      100.0[0m
+  [32mSQK-MAP006 Short                         100.0       96.0[0m
+  [32mPCR adapters 1                           100.0       66.7[0m
+  [32mPCR tail 1                                93.3      100.0[0m
+  [32mPCR tail 2                               100.0       68.8[0m
+  1D^2 part 1                               57.1       60.7
+  1D^2 part 2                               85.3       76.7
+  Barcode 1 (reverse)                       64.3       62.5
+  Barcode 2 (reverse)                       64.0       30.8
+  Barcode 3 (reverse)                       61.5       61.5
+  Barcode 4 (reverse)                       56.0       60.7
+  Barcode 5 (reverse)                       60.7       62.5
+  Barcode 6 (reverse)                       63.0       65.4
+  Barcode 7 (reverse)                       59.4       62.5
+  Barcode 8 (reverse)                       65.5       61.8
+  Barcode 9 (reverse)                       66.7       58.6
+  Barcode 10 (reverse)                      60.0       65.4
+  Barcode 11 (reverse)                      70.0       51.9
+  Barcode 12 (reverse)                      66.7       72.0
+  Barcode 1 (forward)                       69.0       88.0
+  Barcode 2 (forward)                       70.4       66.7
+  Barcode 3 (forward)                       70.8       61.3
+  Barcode 4 (forward)                       68.0       69.2
+  Barcode 5 (forward)                       68.0       63.0
+  Barcode 6 (forward)                       84.0       79.2
+  Barcode 7 (forward)                       75.0       63.3
+  Barcode 8 (forward)                       58.8       32.1
+  Barcode 9 (forward)                       70.8       70.8
+  Barcode 10 (forward)                      66.7       60.7
+  Barcode 11 (forward)                      64.5       69.0
+  Barcode 12 (forward)                      46.2       62.5
+  Barcode 13 (forward)                      59.3       51.9
+  Barcode 14 (forward)                      56.0       55.9
+  Barcode 15 (forward)                      64.0       42.9
+  Barcode 16 (forward)                      42.3       52.0
+  Barcode 17 (forward)                      63.0       66.7
+  Barcode 18 (forward)                      58.3       68.0
+  Barcode 19 (forward)                      66.7       73.1
+  Barcode 20 (forward)                      64.3       66.7
+  Barcode 21 (forward)                      63.3       60.7
+  Barcode 22 (forward)                      64.0       36.0
+  Barcode 23 (forward)                      60.0       64.3
+  Barcode 24 (forward)                      68.0       65.5
+  Barcode 25 (forward)                      66.7       64.3
+  Barcode 26 (forward)                      68.0       61.5
+  Barcode 27 (forward)                      61.5       62.5
+  Barcode 28 (forward)                      60.6       48.1
+  Barcode 29 (forward)                      63.3       60.7
+  Barcode 30 (forward)                      42.9       60.7
+  Barcode 31 (forward)                      66.7       64.0
+  Barcode 32 (forward)                      68.0       53.8
+  Barcode 33 (forward)                      61.5       59.3
+  Barcode 34 (forward)                      59.3       61.3
+  Barcode 35 (forward)                      61.5       69.2
+  Barcode 36 (forward)                      59.3       68.0
+  Barcode 37 (forward)                      67.9       65.4
+  Barcode 38 (forward)                      65.4       68.0
+  Barcode 39 (forward)                      71.4       61.8
+  Barcode 40 (forward)                      66.7       57.1
+  Barcode 41 (forward)                      63.3       66.7
+  Barcode 42 (forward)                      66.7       67.9
+  Barcode 43 (forward)                      67.9       66.7
+  Barcode 44 (forward)                      58.1       70.8
+  Barcode 45 (forward)                      65.5       57.6
+  Barcode 46 (forward)                      69.0       63.0
+  Barcode 47 (forward)                      73.1       66.7
+  Barcode 48 (forward)                      64.0       65.4
+  Barcode 49 (forward)                      62.5       65.4
+  Barcode 50 (forward)                      63.0       67.7
+  Barcode 51 (forward)                      62.1       63.0
+  Barcode 52 (forward)                      65.4       75.0
+  Barcode 53 (forward)                      64.3       64.3
+  Barcode 54 (forward)                      61.3       60.7
+  Barcode 55 (forward)                      32.0       70.4
+  Barcode 56 (forward)                      61.5       29.6
+  Barcode 57 (forward)                      60.0       66.7
+  Barcode 58 (forward)                      69.2       75.0
+  Barcode 59 (forward)                      44.0       64.0
+  Barcode 60 (forward)                      66.7       66.7
+  Barcode 61 (forward)                      58.8       62.5
+  Barcode 62 (forward)                      62.5       40.0
+  Barcode 63 (forward)                      66.7       69.2
+  Barcode 64 (forward)                      69.2       63.0
+  Barcode 65 (forward)                      64.3       63.0
+  Barcode 66 (forward)                      67.9       63.0
+  Barcode 67 (forward)                      70.4       64.0
+  Barcode 68 (forward)                      60.6       63.0
+  Barcode 69 (forward)                      61.5       64.0
+  Barcode 70 (forward)                      68.0       41.7
+  Barcode 71 (forward)                      55.6       52.9
+  Barcode 72 (forward)                      69.2       62.5
+  Barcode 73 (forward)                      37.5       58.6
+  Barcode 74 (forward)                      64.0       69.2
+  Barcode 75 (forward)                      60.7       65.5
+  Barcode 76 (forward)                      60.0       73.1
+  Barcode 77 (forward)                      66.7       64.0
+  Barcode 78 (forward)                      54.5       59.5
+  Barcode 79 (forward)                      69.2       70.8
+  Barcode 80 (forward)                      56.0       66.7
+  Barcode 81 (forward)                      67.9       67.9
+  Barcode 82 (forward)                      71.4       70.8
+  Barcode 83 (forward)                      62.5       68.0
+  Barcode 84 (forward)                      65.4       66.7
+  Barcode 85 (forward)                      60.0       70.8
+  Barcode 86 (forward)                      25.0       65.4
+  Barcode 87 (forward)                      61.5       64.0
+  Barcode 88 (forward)                      62.1       64.3
+  Barcode 89 (forward)                      66.7       46.7
+  Barcode 90 (forward)                      59.3       60.0
+  Barcode 91 (forward)                      62.1       32.3
+  Barcode 92 (forward)                      67.9       66.7
+  Barcode 93 (forward)                      69.2       63.3
+  Barcode 94 (forward)                      68.0       60.7
+  Barcode 95 (forward)                      66.7       58.3
+  Barcode 96 (forward)                      61.3       65.5
+
+
+[1m[4mTrimming adapters from read ends[0m
+           SQK-MAP006_Y_Top_SK63: [31mGGTTGTTTCTGTTGGTGCTGATATTGCT[0m
+        SQK-MAP006_Y_Bottom_SK64: [31mGCAATATCAGCACCAACAGAAA[0m
+     SQK-MAP006_Short_Y_Top_LI32: [31mCGGCGTCTGCTTGGGTGTTTAACCT[0m
+  SQK-MAP006_Short_Y_Bottom_LI33: [31mGGTTAAACACCCAAGCAGACGCCG[0m
+                     PCR_1_start: [31mACTTGCCTGTCGCTCTATCTTC[0m
+                       PCR_1_end: [31mGAAGATAGAGCGACAGGCAAGT[0m
+                PCR_tail_1_start: [31mTTAACCTTTCTGTTGGTGCTGATATTGC[0m
+                  PCR_tail_1_end: [31mGCAATATCAGCACCAACAGAAAGGTTAA[0m
+                PCR_tail_2_start: [31mTTAACCTACTTGCCTGTCGCTCTATCTTC[0m
+                  PCR_tail_2_end: [31mGAAGATAGAGCGACAGGCAAGTAGGTTAA[0m
+
+0 / 5 (0.0%)5 / 5 (100.0%)5 / 5 (100.0%)
+
+5 / 5 reads had adapters trimmed from their start (551 bp removed)
+4 / 5 reads had adapters trimmed from their end (351 bp removed)
+
+
+[1m[4mSplitting reads containing middle adapters[0m
+0 / 5 (0.0%)5 / 5 (100.0%)5 / 5 (100.0%)
+
+0 / 5 reads were split based on middle adapters
+
+
+[1m[4mSaving trimmed reads to file[0m
+
+Saved result to /home/yiheng/test/workspace/Hu_FAH05731_albacore202.chopped.barcode09.fastq
+
+
+# convert the fastq to fasta
+
+sed '/^@/!d;s//>/;N' ${WORKDIR}/${NAME}.chopped.${BARCODE}.fastq > ${WORKDIR}/${NAME}.chopped.${BARCODE}.fasta
++ sed '/^@/!d;s//>/;N' /home/yiheng/test/workspace/Hu_FAH05731_albacore202.chopped.barcode09.fastq
+
+# do blastn for the fasta file
+
+blastn -query ${NAME}.chopped.${BARCODE}.fasta -db rg -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12 | sort -k1,1 -k4,4nr | sort -u -k1,1 --merge > ${NAME}_${BARCODE}_chopped.fasta.${DATE}.rgblast_output
++ sort -k1,1 -k4,4nr
++ sort -u -k1,1 --merge
++ blastn -query Hu_FAH05731_albacore202.chopped.barcode09.fasta -db rg -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12
+
+### supplimentray information for format6:
+
+### qseqid means Query Seq-id
+### sseqid means Subject Seq-id
+### evalue means Expect value
+### bitscore means Bit score
+### length means Alignment length
+### pident means Percentage of identical matches
+### nident means Number of identical matches
+### sgi means Subject GI
+### sacc means Subject accession
+### staxids means Subject Taxonomy ID(s), separated by a ';'
+### sscinames means Subject Scientific Name(s), separated by a ';'
+### scomnames means Subject Common Name(s), separated by a ';'
+### sskingdoms means Subject Super Kingdom(s), separated by a ';'
+
+# cut the seqid from rgblast_output and write it into a list for separate the fasta hit files
+
+cut -f 1 ${NAME}_${BARCODE}_chopped.fasta.${DATE}.rgblast_output > ${NAME}.rgblast.qseqid.${BARCODE}.txt
++ cut -f 1 Hu_FAH05731_albacore202_barcode09_chopped.fasta.20171025.rgblast_output
+
+# separate the blast hit and nohit reads from the fasta file
+
+filterbyname.sh in=${NAME}.chopped.${BARCODE}.fasta out=${NAME}.chopped.rghityes.${BARCODE}.fasta names=${NAME}.rgblast.qseqid.${BARCODE}.txt include=t
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghityes.barcode09.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode09.txt include=t
+java -ea -Xmx20594m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghityes.barcode09.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode09.txt include=t
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.barcode09.fasta, out=Hu_FAH05731_albacore202.chopped.rghityes.barcode09.fasta, names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode09.txt, include=t]
+
+Input is being processed as unpaired
+Time:               0.131 seconds.
+Reads Processed:    5 	0.04k reads/sec
+Bases Processed:    15122 	0.12m bases/sec
+Reads Out:          5
+Bases Out:          15122
+filterbyname.sh in=${NAME}.chopped.${BARCODE}.fasta out=${NAME}.chopped.rghitno.${BARCODE}.fasta names=${NAME}.rgblast.qseqid.${BARCODE}.txt include=f
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode09.txt include=f
+java -ea -Xmx20594m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode09.txt include=f
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.barcode09.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta, names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode09.txt, include=f]
+
+Input is being processed as unpaired
+Time:               0.081 seconds.
+Reads Processed:    5 	0.06k reads/sec
+Bases Processed:    15122 	0.19m bases/sec
+Reads Out:          0
+Bases Out:          0
+
+# do the second blast for the rghitno fasta file
+
+blastn -query ${NAME}.chopped.rghitno.${BARCODE}.fasta -db nt -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12 | sort -k1,1 -k4,4nr | sort -u -k1,1 --merge > ${NAME}_${BARCODE}_chopped.fasta.${DATE}.ntblast_output
++ sort -u -k1,1 --merge
++ sort -k1,1 -k4,4nr
++ blastn -query Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta -db nt -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12
+Command line argument error: Query is Empty!
+
+# cut the seqid from the ntblast_output and write it into a list for separate the fasta hit files
+
+cut -f 1 ${NAME}_${BARCODE}_chopped.fasta.${DATE}.ntblast_output > ${NAME}.ntblast.qseqid.${BARCODE}.txt
++ cut -f 1 Hu_FAH05731_albacore202_barcode09_chopped.fasta.20171025.ntblast_output
+
+# separate the blast hit and nohit reads from the fasta file
+
+filterbyname.sh in=${NAME}.chopped.rghitno.${BARCODE}.fasta out=${NAME}.chopped.rghitno.nthityes.${BARCODE}.fasta names=${NAME}.ntblast.qseqid.${BARCODE}.txt include=t
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode09.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode09.txt include=t
+java -ea -Xmx20594m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode09.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode09.txt include=t
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode09.fasta, names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode09.txt, include=t]
+
+Input is being processed as unpaired
+Time:               0.066 seconds.
+Reads Processed:    0 	0.00k reads/sec
+Bases Processed:    0 	0.00m bases/sec
+Reads Out:          0
+Bases Out:          0
+filterbyname.sh in=${NAME}.chopped.rghitno.${BARCODE}.fasta out=${NAME}.chopped.rghitno.nthitno.${BARCODE}.fasta names=${NAME}.ntblast.qseqid.${BARCODE}.txt include=f
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode09.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode09.txt include=f
+java -ea -Xmx20594m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode09.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode09.txt include=f
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.rghitno.barcode09.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode09.fasta, names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode09.txt, include=f]
+
+Input is being processed as unpaired
+Time:               0.067 seconds.
+Reads Processed:    0 	0.00k reads/sec
+Bases Processed:    0 	0.00m bases/sec
+Reads Out:          0
+Bases Out:          0
+

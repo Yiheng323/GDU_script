@@ -1,0 +1,147 @@
+
+BASEFOLDER='/home/yiheng/test' # make sure the input file is only a copy
++ BASEFOLDER=/home/yiheng/test
+NAME='Hu_FAH05731_albacore202'
++ NAME=Hu_FAH05731_albacore202
+DATE='20171025'
++ DATE=20171025
+BARCODE='barcode21'
++ BARCODE=barcode21
+
+cd ${BASEFOLDER}/basecalled_data
++ cd /home/yiheng/test/basecalled_data
+### tar -xvf ${NAME}.tar.gz
+cd ${NAME}/workspace
++ cd Hu_FAH05731_albacore202/workspace
+
+### filter CDS
+
+cat pass/${BARCODE}/*.fastq fail/${BARCODE}/*.fastq > ${NAME}.${BARCODE}.unlysed.fastq 
++ cat pass/barcode21/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq pass/barcode21/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq pass/barcode21/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq pass/barcode21/fastq_runid_9e74fe33208b91f1dda20a48d995283b963ea7a5_0.fastq 'fail/barcode21/*.fastq'
+cat: fail/barcode21/*.fastq: No such file or directory
+gzip ${NAME}.${BARCODE}.unlysed.fastq
++ gzip Hu_FAH05731_albacore202.barcode21.unlysed.fastq
+gunzip -c ${NAME}.${BARCODE}.unlysed.fastq.gz | NanoLyse | gzip > ${NAME}.${BARCODE}.fastq.gz
++ NanoLyse
++ gunzip -c Hu_FAH05731_albacore202.barcode21.unlysed.fastq.gz
++ gzip
+gunzip ${NAME}.${BARCODE}.fastq.gz
++ gunzip Hu_FAH05731_albacore202.barcode21.fastq.gz
+rm ${NAME}.${BARCODE}.unlysed.fastq.gz
++ rm Hu_FAH05731_albacore202.barcode21.unlysed.fastq.gz
+
+### move to the workspace folder for further manipulation
+cd ${BASEFOLDER}
++ cd /home/yiheng/test
+mkdir -p workspace/${BARCODE}
++ mkdir -p workspace/barcode21
+mv ${BASEFOLDER}/basecalled_data/${NAME}/workspace/pass/${NAME}.${BARCODE}.fastq ${BASEFOLDER}/workspace/${BARCODE}
++ mv /home/yiheng/test/basecalled_data/Hu_FAH05731_albacore202/workspace/pass/Hu_FAH05731_albacore202.barcode21.fastq /home/yiheng/test/workspace/barcode21
+mv: cannot stat `/home/yiheng/test/basecalled_data/Hu_FAH05731_albacore202/workspace/pass/Hu_FAH05731_albacore202.barcode21.fastq': No such file or directory
+cd ${BASEFOLDER}/workspace/${BARCODE}
++ cd /home/yiheng/test/workspace/barcode21
+
+# do porechop to chop out adapter sequence
+
+porechop -i ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.${BARCODE}.fastq -o ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fastq --format fastq --middle_threshold 95
++ porechop -i /home/yiheng/test/workspace/barcode21/Hu_FAH05731_albacore202.barcode21.fastq -o /home/yiheng/test/workspace/barcode21/Hu_FAH05731_albacore202.chopped.barcode21.fastq --format fastq --middle_threshold 95
+Error: could not find /home/yiheng/test/workspace/barcode21/Hu_FAH05731_albacore202.barcode21.fastq
+
+# convert the fastq to fasta
+
+sed '/^@/!d;s//>/;N' ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fastq > ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fasta
++ sed '/^@/!d;s//>/;N' /home/yiheng/test/workspace/barcode21/Hu_FAH05731_albacore202.chopped.barcode21.fastq
+sed: can't read /home/yiheng/test/workspace/barcode21/Hu_FAH05731_albacore202.chopped.barcode21.fastq: No such file or directory
+
+# do blastn for the fasta file
+
+blastn -query ${NAME}.chopped.${BARCODE}.fasta -db rg -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12 | sort -k1,1 -k4,4nr | sort -u -k1,1 --merge > ${NAME}_${BARCODE}_chopped.fasta.${DATE}.rgblast_output
++ sort -k1,1 -k4,4nr
++ blastn -query Hu_FAH05731_albacore202.chopped.barcode21.fasta -db rg -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12
++ sort -u -k1,1 --merge
+Command line argument error: Query is Empty!
+
+### supplimentray information for format6:
+
+### qseqid means Query Seq-id
+### sseqid means Subject Seq-id
+### evalue means Expect value
+### bitscore means Bit score
+### length means Alignment length
+### pident means Percentage of identical matches
+### nident means Number of identical matches
+### sgi means Subject GI
+### sacc means Subject accession
+### staxids means Subject Taxonomy ID(s), separated by a ';'
+### sscinames means Subject Scientific Name(s), separated by a ';'
+### scomnames means Subject Common Name(s), separated by a ';'
+### sskingdoms means Subject Super Kingdom(s), separated by a ';'
+
+# cut the seqid from rgblast_output and write it into a list for separate the fasta hit files
+
+cut -f 1 ${NAME}_${BARCODE}_chopped.fasta.${DATE}.rgblast_output > ${NAME}.rgblast.qseqid.${BARCODE}.txt
++ cut -f 1 Hu_FAH05731_albacore202_barcode21_chopped.fasta.20171025.rgblast_output
+
+# separate the blast hit and nohit reads from the fasta file
+
+filterbyname.sh in=${NAME}.chopped.${BARCODE}.fasta out=${NAME}.chopped.rghityes.${BARCODE}.fasta names=${NAME}.rgblast.qseqid.${BARCODE}.txt include=t
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghityes.barcode21.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode21.txt include=t
+java -ea -Xmx28428m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghityes.barcode21.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode21.txt include=t
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.barcode21.fasta, out=Hu_FAH05731_albacore202.chopped.rghityes.barcode21.fasta, names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode21.txt, include=t]
+
+Input is being processed as unpaired
+Time:               0.566 seconds.
+Reads Processed:    0 	0.00k reads/sec
+Bases Processed:    0 	0.00m bases/sec
+Reads Out:          0
+Bases Out:          0
+filterbyname.sh in=${NAME}.chopped.${BARCODE}.fasta out=${NAME}.chopped.rghitno.${BARCODE}.fasta names=${NAME}.rgblast.qseqid.${BARCODE}.txt include=f
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode21.txt include=f
+java -ea -Xmx28428m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode21.txt include=f
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.barcode21.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta, names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode21.txt, include=f]
+
+Input is being processed as unpaired
+Time:               0.107 seconds.
+Reads Processed:    0 	0.00k reads/sec
+Bases Processed:    0 	0.00m bases/sec
+Reads Out:          0
+Bases Out:          0
+
+# do the second blast for the rghitno fasta file
+
+blastn -query ${NAME}.chopped.rghitno.${BARCODE}.fasta -db nt -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12 | sort -k1,1 -k4,4nr | sort -u -k1,1 --merge > ${NAME}_${BARCODE}_chopped.fasta.${DATE}.ntblast_output
++ sort -k1,1 -k4,4nr
++ blastn -query Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta -db nt -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12
++ sort -u -k1,1 --merge
+Command line argument error: Query is Empty!
+
+# cut the seqid from the ntblast_output and write it into a list for separate the fasta hit files
+
+cut -f 1 ${NAME}_${BARCODE}_chopped.fasta.${DATE}.ntblast_output > ${NAME}.ntblast.qseqid.${BARCODE}.txt
++ cut -f 1 Hu_FAH05731_albacore202_barcode21_chopped.fasta.20171025.ntblast_output
+
+# separate the blast hit and nohit reads from the fasta file
+
+filterbyname.sh in=${NAME}.chopped.rghitno.${BARCODE}.fasta out=${NAME}.chopped.rghitno.nthityes.${BARCODE}.fasta names=${NAME}.ntblast.qseqid.${BARCODE}.txt include=t
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode21.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode21.txt include=t
+java -ea -Xmx28428m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode21.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode21.txt include=t
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode21.fasta, names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode21.txt, include=t]
+
+Input is being processed as unpaired
+Time:               0.131 seconds.
+Reads Processed:    0 	0.00k reads/sec
+Bases Processed:    0 	0.00m bases/sec
+Reads Out:          0
+Bases Out:          0
+filterbyname.sh in=${NAME}.chopped.rghitno.${BARCODE}.fasta out=${NAME}.chopped.rghitno.nthitno.${BARCODE}.fasta names=${NAME}.ntblast.qseqid.${BARCODE}.txt include=f
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode21.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode21.txt include=f
+java -ea -Xmx28428m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode21.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode21.txt include=f
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.rghitno.barcode21.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode21.fasta, names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode21.txt, include=f]
+
+Input is being processed as unpaired
+Time:               0.305 seconds.
+Reads Processed:    0 	0.00k reads/sec
+Bases Processed:    0 	0.00m bases/sec
+Reads Out:          0
+Bases Out:          0
+

@@ -1,0 +1,308 @@
+
+BASEFOLDER='/home/yiheng/test' # make sure the input file is only a copy
++ BASEFOLDER=/home/yiheng/test
+NAME='Hu_FAH05731_albacore202'
++ NAME=Hu_FAH05731_albacore202
+DATE='20171025'
++ DATE=20171025
+BARCODE='barcode20'
++ BARCODE=barcode20
+
+cd ${BASEFOLDER}/basecalled_data
++ cd /home/yiheng/test/basecalled_data
+### tar -xvf ${NAME}.tar.gz
+cd ${NAME}/workspace/pass
++ cd Hu_FAH05731_albacore202/workspace/pass
+
+### filter CDS
+
+cat ${BARCODE}/*.fastq > ${NAME}.${BARCODE}.unlysed.fastq 
++ cat barcode20/fastq_runid_392a67b9624943ee17dea19abac7f75251551481_0.fastq barcode20/fastq_runid_45b6d8787ae35ac62ea9b83bf629a46e629e2eaf_0.fastq barcode20/fastq_runid_4ed9b6b70f5fb26cc770ca4804ceb16ca25f617f_0.fastq barcode20/fastq_runid_5d2e5a369dca7abb9a35afc48a0e7e5b2fb51843_0.fastq barcode20/fastq_runid_6139336acaf8e26df76a44a2bb375771d63aa8b5_0.fastq
+gzip ${NAME}.${BARCODE}.unlysed.fastq
++ gzip Hu_FAH05731_albacore202.barcode20.unlysed.fastq
+gunzip -c ${NAME}.${BARCODE}.unlysed.fastq.gz | NanoLyse | gzip > ${NAME}.${BARCODE}.fastq.gz
++ gzip
++ NanoLyse
++ gunzip -c Hu_FAH05731_albacore202.barcode20.unlysed.fastq.gz
+gunzip ${NAME}.${BARCODE}.fastq.gz
++ gunzip Hu_FAH05731_albacore202.barcode20.fastq.gz
+rm ${NAME}.${BARCODE}.unlysed.fastq.gz
++ rm Hu_FAH05731_albacore202.barcode20.unlysed.fastq.gz
+
+### move to the workspace folder for further manipulation
+cd ${BASEFOLDER}
++ cd /home/yiheng/test
+mkdir -p workspace/${BARCODE}
++ mkdir -p workspace/barcode20
+mv ${BASEFOLDER}/basecalled_data/${NAME}/workspace/pass/${NAME}.${BARCODE}.fastq ${BASEFOLDER}/workspace/${BARCODE}
++ mv /home/yiheng/test/basecalled_data/Hu_FAH05731_albacore202/workspace/pass/Hu_FAH05731_albacore202.barcode20.fastq /home/yiheng/test/workspace/barcode20
+cd ${BASEFOLDER}/workspace/${BARCODE}
++ cd /home/yiheng/test/workspace/barcode20
+
+# do porechop to chop out adapter sequence
+
+porechop -i ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.${BARCODE}.fastq -o ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fastq --format fastq --middle_threshold 95
++ porechop -i /home/yiheng/test/workspace/barcode20/Hu_FAH05731_albacore202.barcode20.fastq -o /home/yiheng/test/workspace/barcode20/Hu_FAH05731_albacore202.chopped.barcode20.fastq --format fastq --middle_threshold 95
+
+[1m[4mLoading reads[0m
+/home/yiheng/test/workspace/barcode20/Hu_FAH05731_albacore202.barcode20.fastq
+26 reads loaded
+
+
+[1m[4mLooking for known adapter sets[0m
+0 / 26 (0.0%)10 / 26 (38.5%)20 / 26 (76.9%)26 / 26 (100.0%)26 / 26 (100.0%)
+                                        Best               [0m
+                                        read       Best    [0m
+                                        start      read end[0m
+  [4mSet                                   %ID        %ID     [0m
+  [32mSQK-NSK007                                96.4       73.1[0m
+  Rapid                                     61.9        0.0
+  [32mSQK-MAP006                                82.8      100.0[0m
+  [32mSQK-MAP006 Short                         100.0      100.0[0m
+  [32mPCR adapters 1                           100.0      100.0[0m
+  [32mPCR tail 1                               100.0      100.0[0m
+  [32mPCR tail 2                               100.0      100.0[0m
+  1D^2 part 1                               62.1       62.1
+  [32m1D^2 part 2                               90.9       79.4[0m
+  Barcode 1 (reverse)                       65.4       61.5
+  Barcode 2 (reverse)                       68.0       62.5
+  Barcode 3 (reverse)                       60.0       72.0
+  Barcode 4 (reverse)                       65.4       70.4
+  Barcode 5 (reverse)                       66.7       66.7
+  Barcode 6 (reverse)                       73.1       68.8
+  Barcode 7 (reverse)                       64.5       65.4
+  Barcode 8 (reverse)                       76.9       69.2
+  Barcode 9 (reverse)                       70.4       70.4
+  Barcode 10 (reverse)                      62.5       64.5
+  Barcode 11 (reverse)                      64.3       64.5
+  Barcode 12 (reverse)                      73.1       71.4
+  Barcode 1 (forward)                       64.3       69.2
+  Barcode 2 (forward)                       69.2       70.4
+  Barcode 3 (forward)                       66.7       69.0
+  Barcode 4 (forward)                       76.9       71.4
+  [32mBarcode 5 (forward)                       96.0       76.9[0m
+  Barcode 6 (forward)                       70.8       79.2
+  [32mBarcode 7 (forward)                       80.0       91.7[0m
+  Barcode 8 (forward)                       66.7       66.7
+  Barcode 9 (forward)                       69.2       67.9
+  Barcode 10 (forward)                      69.2       69.2
+  Barcode 11 (forward)                      69.2       67.9
+  Barcode 12 (forward)                      65.4       64.3
+  Barcode 13 (forward)                      65.4       72.0
+  Barcode 14 (forward)                      65.5       63.3
+  Barcode 15 (forward)                      65.4       68.0
+  Barcode 16 (forward)                      67.7       69.0
+  Barcode 17 (forward)                      66.7       66.7
+  Barcode 18 (forward)                      61.5       68.0
+  Barcode 19 (forward)                      70.8       80.0
+  Barcode 20 (forward)                      69.0       70.8
+  Barcode 21 (forward)                      68.0       67.9
+  Barcode 22 (forward)                      63.0       66.7
+  Barcode 23 (forward)                      66.7       69.0
+  Barcode 24 (forward)                      70.8       68.0
+  Barcode 25 (forward)                      66.7       69.2
+  Barcode 26 (forward)                      65.4       69.2
+  Barcode 27 (forward)                      68.0       68.0
+  Barcode 28 (forward)                      66.7       66.7
+  Barcode 29 (forward)                      64.0       73.1
+  Barcode 30 (forward)                      72.0       66.7
+  Barcode 31 (forward)                      69.0       72.0
+  Barcode 32 (forward)                      66.7       69.0
+  Barcode 33 (forward)                      71.4       69.2
+  Barcode 34 (forward)                      64.3       63.0
+  Barcode 35 (forward)                      66.7       69.2
+  Barcode 36 (forward)                      67.9       66.7
+  Barcode 37 (forward)                      70.8       68.0
+  Barcode 38 (forward)                      64.3       64.0
+  Barcode 39 (forward)                      76.0       63.0
+  Barcode 40 (forward)                      66.7       69.0
+  Barcode 41 (forward)                      67.9       67.9
+  Barcode 42 (forward)                      72.0       76.9
+  Barcode 43 (forward)                      73.1       66.7
+  Barcode 44 (forward)                      60.7       61.3
+  Barcode 45 (forward)                      66.7       70.8
+  Barcode 46 (forward)                      72.0       72.0
+  Barcode 47 (forward)                      72.0       65.5
+  Barcode 48 (forward)                      69.2       65.4
+  Barcode 49 (forward)                      68.0       70.8
+  Barcode 50 (forward)                      69.2       69.2
+  Barcode 51 (forward)                      65.6       68.0
+  Barcode 52 (forward)                      67.9       69.2
+  Barcode 53 (forward)                      66.7       69.2
+  Barcode 54 (forward)                      70.8       68.0
+  Barcode 55 (forward)                      73.1       66.7
+  Barcode 56 (forward)                      70.4       66.7
+  Barcode 57 (forward)                      69.2       73.1
+  Barcode 58 (forward)                      72.0       69.2
+  Barcode 59 (forward)                      65.4       66.7
+  Barcode 60 (forward)                      72.0       69.2
+  Barcode 61 (forward)                      66.7       66.7
+  Barcode 62 (forward)                      64.5       68.0
+  Barcode 63 (forward)                      70.4       72.0
+  Barcode 64 (forward)                      67.9       68.0
+  Barcode 65 (forward)                      66.7       68.0
+  Barcode 66 (forward)                      73.1       70.4
+  Barcode 67 (forward)                      70.8       67.7
+  Barcode 68 (forward)                      68.0       67.9
+  Barcode 69 (forward)                      72.0       68.0
+  Barcode 70 (forward)                      69.2       65.5
+  Barcode 71 (forward)                      66.7       65.4
+  Barcode 72 (forward)                      66.7       65.5
+  Barcode 73 (forward)                      58.3       65.4
+  Barcode 74 (forward)                      66.7       70.4
+  Barcode 75 (forward)                      69.2       68.0
+  Barcode 76 (forward)                      66.7       64.5
+  Barcode 77 (forward)                      65.4       63.3
+  Barcode 78 (forward)                      60.7       70.4
+  Barcode 79 (forward)                      70.8       69.2
+  Barcode 80 (forward)                      66.7       66.7
+  Barcode 81 (forward)                      72.0       73.1
+  Barcode 82 (forward)                      73.1       69.2
+  Barcode 83 (forward)                      66.7       68.0
+  Barcode 84 (forward)                      64.0       68.0
+  Barcode 85 (forward)                      68.0       65.5
+  Barcode 86 (forward)                      76.0       64.0
+  Barcode 87 (forward)                      69.2       68.0
+  Barcode 88 (forward)                      67.7       68.0
+  Barcode 89 (forward)                      75.0       66.7
+  Barcode 90 (forward)                      69.2       67.9
+  Barcode 91 (forward)                      64.0       65.5
+  Barcode 92 (forward)                      64.0       69.2
+  Barcode 93 (forward)                      65.4       64.3
+  Barcode 94 (forward)                      66.7       66.7
+  Barcode 95 (forward)                      66.7       68.0
+  Barcode 96 (forward)                      64.5       66.7
+
+
+[1m[4mTrimming adapters from read ends[0m
+                SQK-NSK007_Y_Top: [31mAATGTACTTCGTTCAGTTACGTATTGCT[0m
+             SQK-NSK007_Y_Bottom: [31mGCAATACGTAACTGAACGAAGT[0m
+           SQK-MAP006_Y_Top_SK63: [31mGGTTGTTTCTGTTGGTGCTGATATTGCT[0m
+        SQK-MAP006_Y_Bottom_SK64: [31mGCAATATCAGCACCAACAGAAA[0m
+     SQK-MAP006_Short_Y_Top_LI32: [31mCGGCGTCTGCTTGGGTGTTTAACCT[0m
+  SQK-MAP006_Short_Y_Bottom_LI33: [31mGGTTAAACACCCAAGCAGACGCCG[0m
+                     PCR_1_start: [31mACTTGCCTGTCGCTCTATCTTC[0m
+                       PCR_1_end: [31mGAAGATAGAGCGACAGGCAAGT[0m
+                PCR_tail_1_start: [31mTTAACCTTTCTGTTGGTGCTGATATTGC[0m
+                  PCR_tail_1_end: [31mGCAATATCAGCACCAACAGAAAGGTTAA[0m
+                PCR_tail_2_start: [31mTTAACCTACTTGCCTGTCGCTCTATCTTC[0m
+                  PCR_tail_2_end: [31mGAAGATAGAGCGACAGGCAAGTAGGTTAA[0m
+                1D2_part_2_start: [31mCTTCGTTCAGTTACGTATTGCTGGCGTCTGCTT[0m
+                  1D2_part_2_end: [31mCACCCAAGCAGACGCCAGCAATACGTAACT[0m
+                            BC05: [31mCTTGTCCAGGGTTTGTGTAACCTT[0m
+                        BC05_rev: [31mAAGGTTACACAAACCCTGGACAAG[0m
+                            BC07: [31mGTGTTACCGTGGGAATGAATCCTT[0m
+                        BC07_rev: [31mAAGGATTCATTCCCACGGTAACAC[0m
+
+0 / 26 (0.0%)10 / 26 (38.5%)20 / 26 (76.9%)26 / 26 (100.0%)26 / 26 (100.0%)
+
+25 / 26 reads had adapters trimmed from their start (2,478 bp removed)
+17 / 26 reads had adapters trimmed from their end (1,314 bp removed)
+
+
+[1m[4mSplitting reads containing middle adapters[0m
+0 / 26 (0.0%)10 / 26 (38.5%)20 / 26 (76.9%)26 / 26 (100.0%)26 / 26 (100.0%)
+
+0 / 26 reads were split based on middle adapters
+
+
+[1m[4mSaving trimmed reads to file[0m
+
+Saved result to /home/yiheng/test/workspace/barcode20/Hu_FAH05731_albacore202.chopped.barcode20.fastq
+
+
+# convert the fastq to fasta
+
+sed '/^@/!d;s//>/;N' ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fastq > ${BASEFOLDER}/workspace/${BARCODE}/${NAME}.chopped.${BARCODE}.fasta
++ sed '/^@/!d;s//>/;N' /home/yiheng/test/workspace/barcode20/Hu_FAH05731_albacore202.chopped.barcode20.fastq
+
+# do blastn for the fasta file
+
+blastn -query ${NAME}.chopped.${BARCODE}.fasta -db rg -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12 | sort -k1,1 -k4,4nr | sort -u -k1,1 --merge > ${NAME}_${BARCODE}_chopped.fasta.${DATE}.rgblast_output
++ sort -u -k1,1 --merge
++ blastn -query Hu_FAH05731_albacore202.chopped.barcode20.fasta -db rg -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12
++ sort -k1,1 -k4,4nr
+
+### supplimentray information for format6:
+
+### qseqid means Query Seq-id
+### sseqid means Subject Seq-id
+### evalue means Expect value
+### bitscore means Bit score
+### length means Alignment length
+### pident means Percentage of identical matches
+### nident means Number of identical matches
+### sgi means Subject GI
+### sacc means Subject accession
+### staxids means Subject Taxonomy ID(s), separated by a ';'
+### sscinames means Subject Scientific Name(s), separated by a ';'
+### scomnames means Subject Common Name(s), separated by a ';'
+### sskingdoms means Subject Super Kingdom(s), separated by a ';'
+
+# cut the seqid from rgblast_output and write it into a list for separate the fasta hit files
+
+cut -f 1 ${NAME}_${BARCODE}_chopped.fasta.${DATE}.rgblast_output > ${NAME}.rgblast.qseqid.${BARCODE}.txt
++ cut -f 1 Hu_FAH05731_albacore202_barcode20_chopped.fasta.20171025.rgblast_output
+
+# separate the blast hit and nohit reads from the fasta file
+
+filterbyname.sh in=${NAME}.chopped.${BARCODE}.fasta out=${NAME}.chopped.rghityes.${BARCODE}.fasta names=${NAME}.rgblast.qseqid.${BARCODE}.txt include=t
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghityes.barcode20.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode20.txt include=t
+java -ea -Xmx20613m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghityes.barcode20.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode20.txt include=t
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.barcode20.fasta, out=Hu_FAH05731_albacore202.chopped.rghityes.barcode20.fasta, names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode20.txt, include=t]
+
+Input is being processed as unpaired
+Time:               0.105 seconds.
+Reads Processed:    26 	0.25k reads/sec
+Bases Processed:    55296 	0.53m bases/sec
+Reads Out:          24
+Bases Out:          48052
+filterbyname.sh in=${NAME}.chopped.${BARCODE}.fasta out=${NAME}.chopped.rghitno.${BARCODE}.fasta names=${NAME}.rgblast.qseqid.${BARCODE}.txt include=f
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode20.txt include=f
+java -ea -Xmx20613m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode20.txt include=f
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.barcode20.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta, names=Hu_FAH05731_albacore202.rgblast.qseqid.barcode20.txt, include=f]
+
+Input is being processed as unpaired
+Time:               0.141 seconds.
+Reads Processed:    26 	0.18k reads/sec
+Bases Processed:    55296 	0.39m bases/sec
+Reads Out:          2
+Bases Out:          7244
+
+# do the second blast for the rghitno fasta file
+
+blastn -query ${NAME}.chopped.rghitno.${BARCODE}.fasta -db nt -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12 | sort -k1,1 -k4,4nr | sort -u -k1,1 --merge > ${NAME}_${BARCODE}_chopped.fasta.${DATE}.ntblast_output
++ sort -k1,1 -k4,4nr
++ sort -u -k1,1 --merge
++ blastn -query Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta -db nt -evalue 0.01 -outfmt '6 qseqid sseqid evalue bitscore length pident nident sgi sacc staxids sscinames scomnames sskingdoms' -show_gis -num_threads 12
+
+# cut the seqid from the ntblast_output and write it into a list for separate the fasta hit files
+
+cut -f 1 ${NAME}_${BARCODE}_chopped.fasta.${DATE}.ntblast_output > ${NAME}.ntblast.qseqid.${BARCODE}.txt
++ cut -f 1 Hu_FAH05731_albacore202_barcode20_chopped.fasta.20171025.ntblast_output
+
+# separate the blast hit and nohit reads from the fasta file
+
+filterbyname.sh in=${NAME}.chopped.rghitno.${BARCODE}.fasta out=${NAME}.chopped.rghitno.nthityes.${BARCODE}.fasta names=${NAME}.ntblast.qseqid.${BARCODE}.txt include=t
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode20.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode20.txt include=t
+java -ea -Xmx20613m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode20.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode20.txt include=t
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.nthityes.barcode20.fasta, names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode20.txt, include=t]
+
+Input is being processed as unpaired
+Time:               0.135 seconds.
+Reads Processed:    2 	0.01k reads/sec
+Bases Processed:    7244 	0.05m bases/sec
+Reads Out:          0
+Bases Out:          0
+filterbyname.sh in=${NAME}.chopped.rghitno.${BARCODE}.fasta out=${NAME}.chopped.rghitno.nthitno.${BARCODE}.fasta names=${NAME}.ntblast.qseqid.${BARCODE}.txt include=f
++ filterbyname.sh in=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode20.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode20.txt include=f
+java -ea -Xmx20613m -cp /home/yiheng/anaconda3/opt/bbmap-37.52/current/ driver.FilterReadsByName in=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode20.fasta names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode20.txt include=f
+Executing driver.FilterReadsByName [in=Hu_FAH05731_albacore202.chopped.rghitno.barcode20.fasta, out=Hu_FAH05731_albacore202.chopped.rghitno.nthitno.barcode20.fasta, names=Hu_FAH05731_albacore202.ntblast.qseqid.barcode20.txt, include=f]
+
+Input is being processed as unpaired
+Time:               0.123 seconds.
+Reads Processed:    2 	0.02k reads/sec
+Bases Processed:    7244 	0.06m bases/sec
+Reads Out:          2
+Bases Out:          7244
+
