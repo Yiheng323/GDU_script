@@ -81,7 +81,7 @@ if any(x == True for x in judge_list):
     seq_sum_file = os.path.join(base_called_folder, thing, 'sequencing_summary.txt')
     if not os.path.exists(seq_sum_file):
         print('No sequencing summary file from basecalled folder. Please go check')
-    
+
     print("now getting the headers from %s" % seq_sum_file)
     seq_df = pd.read_csv(seq_sum_file, sep='\t')
     #capture the thing as the prefix of the fastq/fasta files in the barcode folders
