@@ -290,7 +290,7 @@ print("now creating the final dataframe!")
 analysis_foler = os.path.join(BASEDIR, 'analysis')
 if not os.path.exists(analysis_foler):
     os.mkdir(analysis_foler)
-final_df_fn = os.path.join(analysis_foler, 'summary_df_%s.tab' % os.path.basename(BASEDIR))
+final_df_fn = os.path.join(analysis_foler, 'summary_df_%s.tab' % (os.path.basename(BASEDIR)))
 final_df.to_csv(final_df_fn, sep='\t', index=None)
 print("All done. Congratulations!")
 
