@@ -11,7 +11,7 @@
 #     
 #     
 
-# In[5]:
+# In[1]:
 
 import os
 import pandas as pd
@@ -21,7 +21,7 @@ import argparse
 import tarfile
 
 
-# In[6]:
+# In[3]:
 
 parser = argparse.ArgumentParser(description='''
 This is a notebok that drafts a small script to pull in all the data for the WGS pathogen detection and microbiome data. It needs to pull in the following:
@@ -36,12 +36,12 @@ This is a notebok that drafts a small script to pull in all the data for the WGS
 parser.add_argument("BASEDIR", help="base folder, supposed to have all the sub folders processed by WGS script. The same as Indir in YH_script2")
 
 
-# In[7]:
+# In[10]:
 
 args = parser.parse_args()
 
 
-# In[8]:
+# In[4]:
 
 #lets define the base folder
 #BASEDIR = '/home/yiheng/test/20170617_FAH05731'
@@ -49,7 +49,7 @@ BASEDIR = args.BASEDIR
 #this will become the only flag of argparse
 
 
-# In[9]:
+# In[5]:
 
 #write a quick check that looks for all the right folders
 folder_list = 'basecalled_data  scripts  tracking  workspace'.split(' ')
@@ -60,14 +60,14 @@ if not set(os.listdir(os.path.abspath(BASEDIR))) >= set (folder_list):
     print("Something wrong with basefolder. check it please.")
 
 
-# In[10]:
+# In[6]:
 
 # define the columns that you want to pick up from sequencing summary file.
 # Here is the columns I chose for plotting out data, enough information for me so I did not pick others.
 seq_df_headers = ['read_id','passes_filtering', 'sequence_length_template', 'mean_qscore_template',                  'barcode_arrangement', 'barcode_score', 'kit', 'variant']
 
 
-# In[23]:
+# In[7]:
 
 #now get the headers sequencing_summary file
 base_called_folder = os.path.join(BASEDIR, 'basecalled_data')
@@ -81,7 +81,7 @@ if any(x == True for x in judge_list):
     seq_sum_file = os.path.join(base_called_folder, thing, 'sequencing_summary.txt')
     if not os.path.exists(seq_sum_file):
         print('No sequencing summary file from basecalled folder. Please go check')
-
+        
     print("now getting the headers from %s" % seq_sum_file)
     seq_df = pd.read_csv(seq_sum_file, sep='\t')
     #capture the thing as the prefix of the fastq/fasta files in the barcode folders
@@ -104,7 +104,7 @@ else:
         print("there is something strange in the basecalled folder, please check.")
 
 
-# In[113]:
+# In[8]:
 
 #now get all the rgblast_output databases done 
 rg_blast_df_file_list = []
@@ -130,7 +130,7 @@ for folder in os.listdir(workspace):
     #print(folder)
 
 
-# In[114]:
+# In[9]:
 
 #now get all the names of the reads that survived the lyzing
 workspace = os.path.join(BASEDIR, 'workspace')
@@ -161,7 +161,7 @@ for folder in os.listdir(workspace):
             next
 
 
-# In[95]:
+# In[10]:
 
 #now read in the tmp file of nanolyzed ids and add them to the dataframe as column
 def get_read_ids(filename_list):
@@ -173,12 +173,12 @@ def get_read_ids(filename_list):
     return read_id_list
 
 
-# In[96]:
+# In[11]:
 
 nl_survied_list = get_read_ids(nanolyze_readid_list)
 
 
-# In[97]:
+# In[12]:
 
 #do same for porechop + length
 #this is pretty slow. May consider parallzing.
@@ -205,36 +205,36 @@ for folder in os.listdir(workspace):
 #    pc_length_dict[seq.id] = len(seq.seq)
 
 
-# In[98]:
+# In[13]:
 
 # some of the porechopped reads will be splited into two reads they will have an _ in their read id
 porechop_survived_single_list = [x.split('_')[0] for x in porechop_survived_list]
 
 
-# In[99]:
+# In[14]:
 
 # add porechop survived column
 seq_df['pc_survived'] = seq_df['read_id'].isin(porechop_survived_single_list)
 
 
-# In[100]:
+# In[15]:
 
 seq_df.to_csv
 
 
-# In[101]:
+# In[16]:
 
 #add the nanolyze survived column
 seq_df['nl_survived'] = seq_df['read_id'].isin(nl_survied_list)
 #make porchoped survived column
 
 
-# In[102]:
+# In[17]:
 
 import numpy as np
 
 
-# In[103]:
+# In[18]:
 
 blast_header = ['qseqid',
  'sseqid',
@@ -266,7 +266,7 @@ def make_all_blast_df(_list, header, chopped_len_dict):
     return df
 
 
-# In[104]:
+# In[19]:
 
 nt_df = make_all_blast_df(nt_blast_df_file_list, [x +'_nt' for x in  blast_header], pc_length_dict)
 print("now adding the nt output columns.")
@@ -275,7 +275,7 @@ print("now adding the rg output columns.")
 #reduce column number of blast dataframe to what you want before you merge
 
 
-# In[105]:
+# In[20]:
 
 #need to take care of porchop split reads checkin if second last character of string is _
 #make a new column of the blast_df that has the initial read_id
@@ -285,39 +285,19 @@ final_df = pd.merge(tmp_df, nt_df,how='outer',left_on= 'read_id', right_on='read
 print("now creating the final dataframe!")
 
 
-# In[106]:
+# In[24]:
 
 analysis_foler = os.path.join(BASEDIR, 'analysis')
 if not os.path.exists(analysis_foler):
     os.mkdir(analysis_foler)
-final_df_fn = os.path.join(analysis_foler, 'summary_df.tab')
+final_df_fn = os.path.join(analysis_foler, 'summary_df_%s.tab' % os.path.basename(BASEDIR))
 final_df.to_csv(final_df_fn, sep='\t', index=None)
 print("All done. Congratulations!")
-
-
-# In[107]:
-
-#final_df.iloc[:200,0:25]
 
 
 # In[ ]:
 
 
-
-
-# In[24]:
-
-#def length_column(x):
-#    if x in pc_length_dict.keys():
-#        return pc_length_dict[x]
-#    else:
-#        return np.nan
-
-
-# In[25]:
-
-#porchop length column once pc_length_dict is done
-#seq_df['pc_length'] = seq_df.read_id.apply(lambda x: length_column(x))
 
 
 # In[ ]:
