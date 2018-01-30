@@ -241,8 +241,8 @@ if not os.path.isfile('%s/barcode00.fastq' % os.path.join(PASS_FOLDER, 'barcode0
             for fastq in [os.path.join(tmp_folder, z) for z in os.listdir(tmp_folder)  if z.endswith('fastq')]:
                 cat_fastq_command = 'cat %s' % fastq
                 #print(fastq)
-    cat_fastq_command +=' >> %s/barcode00.fastq' % os.path.join(PASS_FOLDER, 'barcode00')
-    cat_fastq_command_stderr = subprocess.check_output(cat_fastq_command, shell=True, stderr=subprocess.STDOUT)
+    	cat_fastq_command +=' >> %s/barcode00.fastq' % os.path.join(PASS_FOLDER, 'barcode00')
+    	cat_fastq_command_stderr = subprocess.check_output(cat_fastq_command, shell=True, stderr=subprocess.STDOUT)
 
 
 # In[74]:
@@ -257,8 +257,8 @@ if not os.path.isfile('%s/barcode00.fastq' % os.path.join(FAIL_FOLDER, 'barcode0
             for fastq in [os.path.join(tmp_folder, z) for z in os.listdir(tmp_folder)  if z.endswith('fastq')]:
                 cat_fastq_command += ' %s' % fastq
                 #print(fastq)
-    cat_fastq_command +=' > %s/barcode00.fastq' % os.path.join(FAIL_FOLDER, 'barcode00')
-    cat_fastq_command_stderr = subprocess.check_output(cat_fastq_command, shell=True, stderr=subprocess.STDOUT)
+    	cat_fastq_command +=' > %s/barcode00.fastq' % os.path.join(FAIL_FOLDER, 'barcode00')
+    	cat_fastq_command_stderr = subprocess.check_output(cat_fastq_command, shell=True, stderr=subprocess.STDOUT)
 
 
 # In[75]:
