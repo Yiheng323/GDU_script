@@ -11,7 +11,7 @@
 #     
 #     
 
-# In[1]:
+# In[22]:
 
 import os
 import pandas as pd
@@ -21,35 +21,31 @@ import argparse
 import tarfile
 
 
-# In[2]:
+# In[23]:
 
-#parser = argparse.ArgumentParser(description='''
-#This is a notebok that drafts a small script to pull in all the data for the WGS pathogen detection and microbiome data. It needs to pull in the following:
+parser = argparse.ArgumentParser(description='''
+This is a notebok that drafts a small script to pull in all the data for the WGS pathogen detection and microbiome data. It needs to pull in the following:
 
-#    * sequence summary file from albacore
-#    * two blast output files (specific database and NCBI)
-#    * get the length of all porchoped reads
-#    * get processing (T/F) for porchoped and nanolyze
-#    * get this all into one data frame
-#''')
+    * sequence summary file from albacore
+    * two blast output files (specific database and NCBI)
+    * get the length of all porchoped reads
+    * get processing (T/F) for porchoped and nanolyze
+    * get this all into one data frame
+''')
 
-#parser.add_argument("BASEDIR", help="base folder, supposed to have all the sub folders processed by WGS script. The same as Indir in YH_script2")
-
-
-# In[3]:
-
-#args = parser.parse_args()
+parser.add_argument("BASEDIR", help="base folder, supposed to have all the sub folders processed by WGS script. The same as Indir in YH_script2. DO NOT add the back slash'/' at the end!")
+args = parser.parse_args()
 
 
-# In[4]:
+# In[25]:
 
 #lets define the base folder
-BASEDIR = '/home/yiheng/data/Wagga_run1'
-#BASEDIR = args.BASEDIR
+#BASEDIR = '/home/yiheng/data/Wagga_run1'
+BASEDIR = args.BASEDIR
 #this will become the only flag of argparse
 
 
-# In[5]:
+# In[26]:
 
 #write a quick check that looks for all the right folders
 folder_list = 'basecalled_data  scripts  tracking  workspace'.split(' ')
@@ -60,14 +56,14 @@ if not set(os.listdir(os.path.abspath(BASEDIR))) >= set (folder_list):
     print("Something wrong with basefolder. check it please.")
 
 
-# In[6]:
+# In[27]:
 
 # define the columns that you want to pick up from sequencing summary file.
 # Here is the columns I chose for plotting out data, enough information for me so I did not pick others.
 seq_df_headers = ['read_id','passes_filtering', 'sequence_length_template', 'mean_qscore_template',                  'barcode_arrangement', 'barcode_score', 'kit', 'variant']
 
 
-# In[7]:
+# In[28]:
 
 #now get the headers sequencing_summary file
 base_called_folder = os.path.join(BASEDIR, 'basecalled_data')
@@ -104,7 +100,7 @@ else:
         print("there is something strange in the basecalled folder, please check.")
 
 
-# In[8]:
+# In[29]:
 
 #now get all the rgblast_output databases done 
 rg_blast_df_file_list = []
@@ -130,7 +126,7 @@ for folder in os.listdir(workspace):
     #print(folder)
 
 
-# In[9]:
+# In[30]:
 
 #now get all the names of the reads that survived the lyzing
 workspace = os.path.join(BASEDIR, 'workspace')
@@ -161,7 +157,7 @@ for folder in os.listdir(workspace):
             next
 
 
-# In[10]:
+# In[31]:
 
 #now read in the tmp file of nanolyzed ids and add them to the dataframe as column
 def get_read_ids(filename_list):
@@ -173,12 +169,12 @@ def get_read_ids(filename_list):
     return read_id_list
 
 
-# In[11]:
+# In[32]:
 
 nl_survied_list = get_read_ids(nanolyze_readid_list)
 
 
-# In[12]:
+# In[33]:
 
 #do same for porechop + length
 #this is pretty slow. May consider parallzing.
@@ -205,36 +201,36 @@ for folder in os.listdir(workspace):
 #    pc_length_dict[seq.id] = len(seq.seq)
 
 
-# In[13]:
+# In[34]:
 
 # some of the porechopped reads will be splited into two reads they will have an _ in their read id
 porechop_survived_single_list = [x.split('_')[0] for x in porechop_survived_list]
 
 
-# In[14]:
+# In[35]:
 
 # add porechop survived column
 seq_df['pc_survived'] = seq_df['read_id'].isin(porechop_survived_single_list)
 
 
-# In[15]:
+# In[36]:
 
 seq_df.to_csv
 
 
-# In[16]:
+# In[37]:
 
 #add the nanolyze survived column
 seq_df['nl_survived'] = seq_df['read_id'].isin(nl_survied_list)
 #make porchoped survived column
 
 
-# In[17]:
+# In[38]:
 
 import numpy as np
 
 
-# In[18]:
+# In[39]:
 
 blast_header = ['qseqid',
  'sseqid',
@@ -266,7 +262,7 @@ def make_all_blast_df(_list, header, chopped_len_dict):
     return df
 
 
-# In[19]:
+# In[40]:
 
 nt_df = make_all_blast_df(nt_blast_df_file_list, [x +'_nt' for x in  blast_header], pc_length_dict)
 print("now adding the nt output columns.")
@@ -275,7 +271,7 @@ print("now adding the rg output columns.")
 #reduce column number of blast dataframe to what you want before you merge
 
 
-# In[20]:
+# In[41]:
 
 #need to take care of porchop split reads checkin if second last character of string is _
 #make a new column of the blast_df that has the initial read_id
@@ -285,7 +281,7 @@ final_df = pd.merge(tmp_df, nt_df,how='outer',left_on= 'read_id', right_on='read
 print("now creating the final dataframe!")
 
 
-# In[21]:
+# In[42]:
 
 analysis_foler = os.path.join(BASEDIR, 'analysis')
 if not os.path.exists(analysis_foler):
