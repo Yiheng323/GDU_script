@@ -1,0 +1,17 @@
+
+cd /home/yiheng/script
++ cd /home/yiheng/script
+python creating_final_df_one_blast.py /home/yiheng/data/20180524_FAH58271
++ python creating_final_df_one_blast.py /home/yiheng/data/20180524_FAH58271
+sys:1: DtypeWarning: Columns (3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,20,22,23,24,25,26,27) have mixed types. Specify dtype option on import or set low_memory=False.
+sys:1: DtypeWarning: Columns (9) have mixed types. Specify dtype option on import or set low_memory=False.
+now getting the headers from /home/yiheng/data/20180524_FAH58271/basecalled_data/20180524_FAH58271_albacore231/sequencing_summary.txt
+now processing porechopped file /home/yiheng/data/20180524_FAH58271/workspace/barcode05/20180524_FAH58271_albacore231.chopped.barcode05.fastq.
+now processing porechopped file /home/yiheng/data/20180524_FAH58271/workspace/barcode00/20180524_FAH58271_albacore231.chopped.barcode00.fastq.
+now processing porechopped file /home/yiheng/data/20180524_FAH58271/workspace/barcode06/20180524_FAH58271_albacore231.chopped.barcode06.fastq.
+now processing porechopped file /home/yiheng/data/20180524_FAH58271/workspace/barcode07/20180524_FAH58271_albacore231.chopped.barcode07.fastq.
+now adding the nt output columns.
+now creating the final dataframe!
+All done. Congratulations!
+
+
