@@ -1,0 +1,29 @@
+
+cd /home/yiheng/script
++ cd /home/yiheng/script
+python plotting_final_df_info_ntblast.py
++ python plotting_final_df_info_ntblast.py
+sys:1: DtypeWarning: Columns (1,2,3,5,16) have mixed types. Specify dtype option on import or set low_memory=False.
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 291364 was translated into 2231603
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 1635066 was translated into 1508258
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 72029 was translated into 1836592
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 251300 was translated into 332405
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 1916993 was translated into 303
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 595593 was translated into 656366
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 71426 was translated into 1915362
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 278968 was translated into 2025498
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 38483 was translated into 1436886
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+/home/yiheng/anaconda3/lib/python3.6/site-packages/ete3/ncbi_taxonomy/ncbiquery.py:240: UserWarning: taxid 112484 was translated into 1431917
+  warnings.warn("taxid %s was translated into %s" %(taxid, merged_conversion[taxid]))
+[1, 131567, 2759, 33154, 33208, 6072, 33213, 33511, 7711, 89593, 7742, 7776, 117570, 117571, 8287, 1338369, 32523, 32524, 40674, 32525, 9347, 1437010, 314146, 9443, 376913, 314293, 9526, 314295, 9604, 207598, 9605, 9606]
+
+

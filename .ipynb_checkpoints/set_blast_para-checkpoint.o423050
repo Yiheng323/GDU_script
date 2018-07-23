@@ -1,0 +1,8 @@
+
+cd /home/yiheng/script
++ cd /home/yiheng/script
+python setting_blast_parameters_from_final_df.py
++ python setting_blast_parameters_from_final_df.py
+sys:1: DtypeWarning: Columns (1,2,3,5,16) have mixed types. Specify dtype option on import or set low_memory=False.
+sys:1: DtypeWarning: Columns (2) have mixed types. Specify dtype option on import or set low_memory=False.
+

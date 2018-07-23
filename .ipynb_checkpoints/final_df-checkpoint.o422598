@@ -1,0 +1,5 @@
+
+cd /home/yiheng/script
++ cd /home/yiheng/script
+python plotting_final_df_info_ntblast.py
++ python plotting_final_df_info_ntblast.py
