@@ -10,6 +10,6 @@
 set -vx
 
 cd /home/yiheng/script
-python creating_final_df_one_blast.py /home/yiheng/test
+python creating_final_df_one_blast.py /home/yiheng/data/20180524_FAH58271
 
 
